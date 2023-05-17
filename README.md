@@ -27,5 +27,5 @@ https://github.com/BowDown097/BetterFishtank
 ![alt text](https://i.postimg.cc/htyxSMXQ/Screenshot-6.png)
 
 ## Bugs:
--Sometimes the extension does not load before the page, requiring a refresh or clicking the button in the extensions popup. 
--Changing your name on fishtank can sometimes break the extension, requiring the extension to be installed again.
+- Sometimes the extension does not load before the page, requiring a refresh or clicking the button in the extensions popup. 
+- Changing your name on fishtank can sometimes break the extension, requiring the extension to be installed again.
