@@ -10,7 +10,7 @@ https://github.com/BowDown097/BetterFishtank
 - fishtank.live toolbar link
 
 ## Installation:
-- Download and unzip the fishtank+.zip file.
+- Download and unzip the fishtank+1.5.zip(1.5 is the most recent for bug fixes) file.
 - Open Chrome/Edge and enable developer mode on the extensions page. 
 
 ![alt text](https://i.postimg.cc/Tdcbw78N/Screenshot-4.png)
