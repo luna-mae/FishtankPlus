@@ -1,4 +1,5 @@
 let librariesLoaded = false;
+let buttonsAdded = false;
 
 function loadArrive(callback) {
   const script = document.createElement('script');
@@ -28,6 +29,7 @@ function initialize() {
 
     return restoreChatBtn;
   }
+  
 
   const fullScreenSvg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
@@ -47,7 +49,7 @@ function initialize() {
     collapseButton.innerText = "COLLAPSE";
     collapseButton.style.padding = "0";
 
-    collapseButton.onclick = function() {
+    collapseButton.onclick = function () {
       document.querySelector(".Chat_chat__Bdojy").style.display = "none";
       document.querySelector(".MainPanel_main-panel__imCh9").style.gridColumn = "2/4";
 
@@ -65,7 +67,8 @@ function initialize() {
       });
     };
 
-    document.arrive(".Chat_chat__Bdojy", function(chatDiv) {
+    document.arrive(".Chat_chat__Bdojy", { existing: true }, function (chatDiv) {
+      if (chatDiv.querySelector(".Button_button__WqJhY")) return;
       chatDiv.appendChild(collapseButton);
     });
   }
@@ -74,8 +77,11 @@ function initialize() {
     const fullScreenBtn = createIconButton(fullScreenSvg);
     fullScreenBtn.onclick = () => document.querySelector(".LiveStreamsCloudflarePlayer_live-streams-player__OCZ2v iframe").requestFullscreen();
 
-    document.arrive(".LiveStreamsControls_prev-next__pbktS", function(controls) {
-      controls.appendChild(fullScreenBtn);
+    document.arrive(".LiveStreamsControls_prev-next__pbktS", { existing: true }, function (controls) {
+      if (!buttonsAdded) {
+        controls.appendChild(fullScreenBtn);
+        buttonsAdded = true;
+      }
     });
   }
 
@@ -87,13 +93,13 @@ function initialize() {
     if (event.isComposing || document.activeElement?.selectionStart !== undefined || document.activeElement?.isContentEditable)
       return;
 
-    if (event.keyCode === KeyCode.KEY_0) {
+    if (event.keyCode === 48) {
       document.querySelector(".LiveStreamsListItem_live-streams-list-item__rALBj:nth-child(12)")?.click();
-    } else if (event.keyCode >= KeyCode.KEY_1 && event.keyCode <= KeyCode.KEY_9) {
+    } else if (event.keyCode >= 49 && event.keyCode <= 57) {
       document.querySelector(`.LiveStreamsListItem_live-streams-list-item__rALBj:nth-child(${event.keyCode - 46})`)?.click();
-    } else if (event.keyCode === KeyCode.KEY_UP) {
+    } else if (event.keyCode === 38) {
       document.querySelector(".LiveStreamsControls_prev-next__pbktS button")?.click();
-    } else if (event.keyCode === KeyCode.KEY_DOWN) {
+    } else if (event.keyCode === 40) {
       document.querySelector(".LiveStreamsControls_prev-next__pbktS button:nth-child(2)")?.click();
     }
   }
