@@ -1,7 +1,7 @@
 # Fishtank+ - A Chrome Extension
 This is a Chrome(and Edge) extension that uses a script to change the interface of Fishtank. Not possible without BowDown097, thank you!
 https://github.com/BowDown097/BetterFishtank
-
+# This extension is under active development, check back for bug fixes.
 ## Features:
 - Chat collapsing
 - Fullscreen button
