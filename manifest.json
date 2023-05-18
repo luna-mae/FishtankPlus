@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Fishtank+",
-  "version": "1.5",
+  "version": "1.6",
   "permissions": [
     "scripting",
     "http://www.fishtank.live/*",
@@ -43,4 +43,4 @@
       "matches": ["http://www.fishtank.live/*", "https://www.fishtank.live/*"]
     }
   ]
-}  
+}
