@@ -1,10 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Fishtank+",
-  "version": "1.4",
+  "version": "1.5",
   "permissions": [
     "scripting",
-    "activeTab",
     "http://www.fishtank.live/*",
     "https://www.fishtank.live/*"
   ],
@@ -30,14 +29,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://www.fishtank.live/*", "https://www.fishtank.live/*"],
+      "matches": ["https://www.fishtank.live/*"],
       "js": ["content.js"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["libs/arrive.js", "libs/keycode.js"],
+      "resources": ["libs/arrive.js"],
+      "matches": ["http://www.fishtank.live/*", "https://www.fishtank.live/*"]
+    },
+    {
+      "resources": ["libs/keycode.js"],
       "matches": ["http://www.fishtank.live/*", "https://www.fishtank.live/*"]
     }
   ]
-}
+}  
