@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-    if (changeInfo.status === 'complete') {
+  chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === 'complete' && tab.active) {
       chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: ['libs/arrive.js', 'libs/keycode.js', 'content.js'],
